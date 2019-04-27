@@ -30,7 +30,7 @@
 
     - ### **Bus**
 
-        ![](/01_Tim_hieu_ve_mang_may_tinh/1.jpg)
+        ![](/images/1_Tim_hieu_ve_mang_may_tinh/1.jpg)
 
     - ### **Ring**
 
