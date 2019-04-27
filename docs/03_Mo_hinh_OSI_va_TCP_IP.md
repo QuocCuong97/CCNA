@@ -32,7 +32,7 @@
 
     - **Transport Layer (Layer 3)** : tương đương Transport của mô hình OSI. Giao thức nổi tiếng của tầng này là **TCP** và **UDP**.
 
-    - **Application Layer (Layer 4)** : kiêm luôn nhiệm vụ tần 5, 6, 7 của OSI.
+    - **Application Layer (Layer 4)** : kiêm luôn nhiệm vụ tầng 5, 6, 7 của OSI.
 
 - ### **Mô hình TCP/IP 5 Layers**
 
