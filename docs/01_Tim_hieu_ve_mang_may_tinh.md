@@ -30,29 +30,29 @@
 
     - ### **Bus**
 
-        ![](/01_Tim_hieu_ve_mang_may_tinh/1.jpg)
+        ![](https://i.imgur.com/bS4hZlZ.jpg)
 
     - ### **Ring**
 
-        ![](/images/1_Tim_hieu_ve_mang_may_tinh/2.jpg)
+        ![](https://i.imgur.com/xuVV3Ml.jpg)
 
     - ### **Star**
 
-        ![](/images/1_Tim_hieu_ve_mang_may_tinh/3.jpg)
+        ![](https://i.imgur.com/QXc4HoO.jpg)
 
 - Các mô hình chia theo mật độ kết nối 
 
    - ### **Full-mesh** : các thiết bị đều được kết nối đến các thiết bị còn lại. Tính dự phòng cao nhưng tốn chi phí đầu tư.
 
-        ![](/images/1_Tim_hieu_ve_mang_may_tinh/4.jpg)
+        ![](https://i.imgur.com/MNLGhIs.jpg?1)
 
     - ### **Hub-and-Spoke** : kết nối thiết bị trung tâm đến các thiết bị còn lại. Sơ đồ này không có tính dự phòng, khi hub ( spoke ) chết thì các spke còn lại cô lập hoàn toàn, hệ thống mất tính dự phòng nhưng bù lại chi phí lắp đặt ít hơn Full-mesh.
 
-        ![](/images/1_Tim_hieu_ve_mang_may_tinh/5.jpg)
+        ![](https://i.imgur.com/Tg9LzU0.jpg)
 
     - ### **Partial-mesh** : sự kết hợp giữa 2 sơ đồ trên, vừa đảm bảo được tính dự phòng vừa ít tốn chi phí cho việc vận hành và bảo dưỡng. Các thiệt bị đều có 1 đường dự phòng.
 
-        ![](/images/1_Tim_hieu_ve_mang_may_tinh/6.jpg)
+        ![](https://i.imgur.com/LKPyTwx.jpg)
 
 > ## 6) Các hình thức kết nối ra Internet
 - ### **ADSL** ( Asymetric Digital Subcriber Line ) ###
