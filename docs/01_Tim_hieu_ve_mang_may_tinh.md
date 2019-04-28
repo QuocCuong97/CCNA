@@ -69,6 +69,8 @@
     - Tốc độ truyền dữ liệu khá cao
     - Thường dùng MultiAccess Channel
     - Các kỹ thuật thường dùng: TokenRing - 16Mbps, Mạng hình sao
+
+        <img src=https://i.imgur.com/IEOx7LC.gif>
 - ### **Mạng diện rộng WAN ( Wide Area Networks )**
     - Không có giới hạn về địa lý
     - Thường là sự kết nối nhiều LAN
@@ -76,12 +78,17 @@
     - Do nhiều tổ chức quản lý
     - Thường dùng kỹ thuật Point-to-Point Channel
     - Các kỹ thuật thường dùng: các đường điện thoại và truyền thông vệ tinh
+
+        <img src=https://i.imgur.com/YOhPaR7.png>
 - ### **Mạng MAN ( Metropolis Area Network )**
     - Có kích thước vùng địa lý lớn hơn LAN nhưng nhỏ hơn WAN
     - Do 1 tổ chức quản lý
     - Thường dùng cáp đồng trục hay sóng ngắn
+
+        <img src=https://i.imgur.com/8SaD863.png>
 - ### **INTERNET**
     - Mạng toàn cầu đặc biệt kết nối mạng của các tổ chức, cá nhân trên toàn thế giới
+    
     - Kết nối từ máy tính cá nhân đến Internet
     - Kết nối các LAN bởi WAN tạo nên Internet
 - ### **INTRANET**
