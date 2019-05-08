@@ -1,6 +1,6 @@
 # OSPF - Open Shortest Path First ( O )
 > ## **1) Đặc điểm**
-- Là 1 giao thức Link-state điển hình . Mỗi Router khi chạy giao thức sẽ gửi bản tin **LSA ( *Link-State Advertisement* )** của nó cho tất cả các Router trong vùng ( **area** ) . Sau 1 thời gian trao đổi , các Router sẽ đồng nhất bảng cơ sở dữ liệu **LSDB ( *Link-State Database* )** với nhau , mỗi Router đều có được "bản đồ mạng" của cả vùng . Từ đó mỗi Router sẽ chạy giải thuật ***Dijkstra*** tính toán ra 1 cây đường đi ngắn nhất ( ***Shortesr Path Tree*** ) và dựa vào cây này để xây dựng bảng định tuyến .
+- Là 1 giao thức Link-state điển hình . Mỗi Router khi chạy giao thức sẽ gửi bản tin **LSA ( *Link-State Advertisement* )** của nó cho tất cả các Router trong vùng ( **area** ) . Sau 1 thời gian trao đổi , các Router sẽ đồng nhất bảng cơ sở dữ liệu **LSDB ( *Link-State Database* )** với nhau , mỗi Router đều có được "bản đồ mạng" của cả vùng . Từ đó mỗi Router sẽ chạy giải thuật ***Dijkstra*** tính toán ra 1 cây đường đi ngắn nhất ( ***Shortest Path Tree*** ) và dựa vào cây này để xây dựng bảng định tuyến .
 - **OSPF** có **AD** = `110`
 - **Metric** = `(10^8)\bandwidth`
 - **OSPF** chạy trực tiếp trên nền IP , có **protocol-id** là `89`
@@ -24,7 +24,7 @@
     - Mỗi vùng sẽ có giá trị định danh là **Area-ID** . **Area-ID** có thể được hiển thị dưới dạng 1 số tự nhiên hoặc dưới dạng 1 địa chỉ IP . **VD :** Vùng 1 có thể được hiển thị là "`area 1`" hoặc "`area 0.0.0.1`" .
     - Một nguyên tắc bắt buộc trong phân vùng **OSPF** là nếu chia thành nhiều vùng thì bắt buộc phải tồn tại 1 vùng mang số hiệu `0` - `Area 0` . `Area 0` còn được gọi là **Backbone Area** và mọi vùng khác bắt buộc phải có kết nối về `area 0` .
 
-        ![](https://i.imgur.com/CDS1DA1.png)
+        ![](/images/ccna/13_OSPF/1.png)
 
     - Trong thao tác cấu hình , **Area-ID** được gán cho link của Router chứ không phải gán cho bản thân Router . Về bản chất , với **OSPF** , không có khái niệm Router thuộc về 1 **area** và chỉ có khái niệm link của Router thuộc về **area** nào .
     - Những Router mà có tất cả các link đều được gắn vào 1 **area** thì sẽ lọt hẳn vào **area** đó và được gọi là các **Internal Router** ( VD như R4 của area 1 ) , các **Internal Router** chỉ việc ghi nhớ trạng thái đường link của Router thuộc về vùng mà nó nằm bên trong . Những Router có các link thuộc về các vùng khác nhau được gọi là các **ABR Router** ( **Area Border Router** ) ( VD như R2 và R3) .
@@ -41,7 +41,7 @@
 > ## **4) Các môi trường OSPF**
 - ### **Serial Point-to-Point**
 
-    ![](https://i.imgur.com/nMgUwH3.png)
+    ![](/images/ccna/13_OSPF/2.png)
 
     - Hai Router láng giềng sẽ ngay lập tức trao đổi thông tin cho nhau qua kết nói Point-to-Point và chuyển trạng thái quan hệ từ 2-WAY sang mức độ **FULL** . Quan hệ **FULL** giữa 2 Router kết nối qua Serial Pont-to-Point được ký hiệu là "`FULL/- `"
 - ### **Broadcast MultiAccess**
@@ -74,6 +74,7 @@
 | Fast Ethernet | 100000 | 1 |
 | Gigabit Ethernet | 1000000 | 0.1 |
 | Serial | 1544 | 64 |
+| Loopback | 10000 | 10 |
 > ## **7) Cấu trúc lệnh OSPF**
 ```
 Router(config) # router ospf [process-id]

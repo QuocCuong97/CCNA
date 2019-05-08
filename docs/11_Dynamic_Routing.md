@@ -4,7 +4,7 @@
 - Với phương thức định tuyến động , các Router cần phải chạy các ***Giao thức định tuyến ( Routing Protocol )*** để có thể tương tác trao đổi thông tin và tính toán định tuyến .
 > ## **2) Phân loại các giao thức định tuyến**
 
-![](https://i.imgur.com/zFFQ9FF.jpg)
+![](/images/ccna/11_Dynamic_Routing/1.jpg)
 
 ### **2.1) EGP và IGP**
 - **Giao thức định tuyến ngoài ( EGP - Exterior Gateway Protocol )** tiêu biểu là giao thức **BGP ( Border Gateway Protocol )** là loại giao thức được dùng để chạy giữa các Router thuộc **AS - Anonymous System** ( vùng tự trị ) khác nhau , phục vụ cho việc trao đổi thông tin định tuyến . Các **AS** thường là các **ISP** . Như vậy , định tuyến ngoài thường được dùng cho mạng Internet toàn cầu để trao đổi số lượng lớn thông tin định tuyến rất lớn giữa các **ISP** với nhau .

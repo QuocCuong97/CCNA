@@ -30,29 +30,29 @@
 
     - ### **Bus**
 
-        ![](https://i.imgur.com/bS4hZlZ.jpg)
+        <img src=https://i.imgur.com/bS4hZlZ.jpg>
 
     - ### **Ring**
 
-        ![](https://i.imgur.com/xuVV3Ml.jpg)
+        <img src=https://i.imgur.com/xuVV3Ml.jpg>
 
     - ### **Star**
 
-        ![](https://i.imgur.com/QXc4HoO.jpg)
+        <img src=https://i.imgur.com/QXc4HoO.jpg>
 
 - Các mô hình chia theo mật độ kết nối 
 
    - ### **Full-mesh** : các thiết bị đều được kết nối đến các thiết bị còn lại. Tính dự phòng cao nhưng tốn chi phí đầu tư.
 
-        ![](https://i.imgur.com/MNLGhIs.jpg?1)
+        <img src=https://i.imgur.com/MNLGhIs.jpg?1>
 
     - ### **Hub-and-Spoke** : kết nối thiết bị trung tâm đến các thiết bị còn lại. Sơ đồ này không có tính dự phòng, khi hub ( spoke ) chết thì các spke còn lại cô lập hoàn toàn, hệ thống mất tính dự phòng nhưng bù lại chi phí lắp đặt ít hơn Full-mesh.
 
-        ![](https://i.imgur.com/Tg9LzU0.jpg)
+        <img src=https://i.imgur.com/Tg9LzU0.jpg>
 
     - ### **Partial-mesh** : sự kết hợp giữa 2 sơ đồ trên, vừa đảm bảo được tính dự phòng vừa ít tốn chi phí cho việc vận hành và bảo dưỡng. Các thiệt bị đều có 1 đường dự phòng.
 
-        ![](https://i.imgur.com/LKPyTwx.jpg)
+        <img src=https://i.imgur.com/LKPyTwx.jpg>
 
 > ## 6) Các hình thức kết nối ra Internet
 - ### **ADSL** ( Asymetric Digital Subcriber Line ) ###
@@ -66,29 +66,30 @@
 > ## 7) **Quy mô của mạng**
 - ### **Mạng cục bộ LAN ( Local Area Network )**
     - Có giới hạn về địa lý
+
     - Tốc độ truyền dữ liệu khá cao
     - Thường dùng MultiAccess Channel
     - Các kỹ thuật thường dùng: TokenRing - 16Mbps, Mạng hình sao
 
-        <img src=https://i.imgur.com/IEOx7LC.gif>
+        <p align="center"><img src=https://i.imgur.com/M0A1n8F.png width=70%></p>
+
 - ### **Mạng diện rộng WAN ( Wide Area Networks )**
     - Không có giới hạn về địa lý
+
     - Thường là sự kết nối nhiều LAN
     - Tốc độ truyền dữ liệu khá thấp
     - Do nhiều tổ chức quản lý
     - Thường dùng kỹ thuật Point-to-Point Channel
     - Các kỹ thuật thường dùng: các đường điện thoại và truyền thông vệ tinh
 
-        <img src=https://i.imgur.com/YOhPaR7.png>
+        <p align="center"><img src=https://i.imgur.com/6IEbwCj.png width=70%></p>
+
 - ### **Mạng MAN ( Metropolis Area Network )**
     - Có kích thước vùng địa lý lớn hơn LAN nhưng nhỏ hơn WAN
     - Do 1 tổ chức quản lý
     - Thường dùng cáp đồng trục hay sóng ngắn
-
-        <img src=https://i.imgur.com/8SaD863.png>
 - ### **INTERNET**
     - Mạng toàn cầu đặc biệt kết nối mạng của các tổ chức, cá nhân trên toàn thế giới
-    
     - Kết nối từ máy tính cá nhân đến Internet
     - Kết nối các LAN bởi WAN tạo nên Internet
 - ### **INTRANET**

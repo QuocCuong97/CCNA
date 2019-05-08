@@ -54,7 +54,7 @@ Với các bit mượn là "11" :
         - ***Marketing** : 100 hosts*
         - ***R&D** : 200 hosts*
 
-        ![](https://i.imgur.com/yyaHzqk.png)
+        ![](/images/ccna/7_Cac_ky_thuat_chia_IP/1.png)
 ```
 Ban đầu dải mạng được cấp : 10.0.0.0/16
 Có 10.0 (16bit) là phần NetID và 0.0 (16bit) là phần HostID
@@ -94,11 +94,11 @@ Có 10.0 (16bit) là phần NetID và 0.0 (16bit) là phần HostID
     - Truy cập http://www.vlsm-calc.net/
     - Nhập thông tin mạng cần chia :
 
-        ![](https://i.imgur.com/vYBNwBG.png)
+        ![](/images/ccna/7_Cac_ky_thuat_chia_IP/2.png)
     
     - Kết quả cho thấy tương tự việc chia bằng tay :
 
-        ![](https://i.imgur.com/z0003T1.png)
+        ![](/images/ccna/7_Cac_ky_thuat_chia_IP/3.png)
 
 > ## **3) CIDR - Classless Inter-Domain Routing**
 - Là kỹ thuật tóm tắt địa chỉ ( **summary**)

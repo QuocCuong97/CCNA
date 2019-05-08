@@ -26,7 +26,7 @@
 - **FD - Feasible Distance** : với mỗi đường đi , giá trị metric từ Router đang xét đến mạng đích gọi là **FD** .
 - **AD - Advertised Distance** : cũng với đường đi ấy , giá trị từ Router láng giềng đến mạng đích được gọi là **AD** .
 
-    ![](https://i.imgur.com/zoWuKlW.png)
+    ![](/images/ccna/14_EIGRP/1.png)
 
 - **Successor** : Trong tất cả các đường đi có cùng 1 đích đến , đường nào có **FD** nhỏ nhất , sẽ được bầu là **Successor** , Router láng giềng trên đường này được gọi là **Successor Router** . Đường **successor** sẽ được đưa vào bảng định tuyến để sử dụng chính thức làm đường đi đến đích . 
 - **Feasible Successor** : Trong tất cả các đường còn lại có **FD** > **FD** của **Successor** , đường nào có **AD** < **FD** của **Successor** , đường đó sẽ được bầu chọn là **Feasible Successor** và được sử dụng làm dự phòng cho **Successor** .
@@ -34,7 +34,7 @@
 > ## **4) Tính toán Metric với EIGRP**
 - `Metric` trong **EIGRP** được tính bằng công thức sau : 
 
-    ![](https://i.imgur.com/Lo1GMAo.png)
+    ![](/images/ccna/14_EIGRP/2.png)
 - Trong đó : 
     - `Bandwitdh` ( băng thông ) đơn vị là `kbps`
     - `Delay` ( độ trễ ) đơn vị là `10 microsecond`

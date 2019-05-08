@@ -14,12 +14,12 @@
                 hoặc sử dụng ***prefix-length*** : ```192.168.1.3 / 24```
 - Bảng `Subnet-mask`
 
-    ![](https://i.imgur.com/V99tGtO.png)
+    ![](/images/ccna/6_Dia_chi_IP/0.png)
     
 >## **3) Các lớp địa chỉ IP**
 ### **3.1) Lớp A**
 
-![](https://i.imgur.com/N70H5VD.png)
+![](/images/ccna/6_Dia_chi_IP/1.png)
 
 - Địa chỉ lớp A sử dụng 1 `octet` làm `net-id`, 3 octet sau làm `host-id`.
 - Bit đầu của 1 địa chỉ lớp A luôn được giữ là `0`.
@@ -28,7 +28,7 @@
 - Phần `host` có 24bit =>  Mỗi mạng lớp A có ( 2^24 - 2 ) = 16,777,214 hosts.
 ### **3.2) Lớp B**
 
-![](https://i.imgur.com/eyPB7mv.png)
+![](/images/ccna/6_Dia_chi_IP/2.png)
 
 - Địa chỉ lớp B sử dụng 2 `octet` đầu làm  `net-id` , 2 `octet` sau làm `host-id`.
 - 2 bit đầu của địa chỉ lớp B luôn được giữ là `10`.
@@ -37,7 +37,7 @@
 - Phần `host` dài 16bit => Mỗi mạng lớp B có ( 2^16 - 2 ) = 65534 hosts.
 ### **3.3) Lớp C**
 
-![](https://i.imgur.com/WgMxuWQ.png)
+![](/images/ccna/6_Dia_chi_IP/3.png)
 
 - Địa chỉ lớp C sử dụng 3 `octet` đầu làm `net-id`, `octet` cuối là `host-id`.
 - 3 bit đầu của 1 _địa chỉ lớp C_ luôn được giữ là `110`.
@@ -46,7 +46,7 @@
 - Phần `host` dài 8 bit do đó 1 mạng lớp C có ( 2^8 -2 ) = 254 hosts.
 ### **3.4) Lớp D**
 
-![](https://i.imgur.com/5dDnphA.png)
+![](/images/ccna/6_Dia_chi_IP/4.png)
 
 - Gồm các địa chỉ thuộc dải `224.0.0.0` -> `239.255.255.255`.
 - Được sử dụng làm địa chỉ **Multicast**.
@@ -56,7 +56,7 @@
     - `224.0.0.10` được dùng cho **EIGRP**.
 ### **3.5) Lớp E**
 
-![](https://i.imgur.com/3taRGq5.png)
+![](/images/ccna/6_Dia_chi_IP/5.png)
 
 - Từ `240.0.0.0` trở đi.
 - Được sử dụng cho mục đích dự phòng và nghiên cứu.
@@ -81,7 +81,7 @@
         - Local Broadcast : `255.255.255.255`
         - Direct Broadcast : `192.168.1.255`
 
-![](https://i.imgur.com/dHEEmZw.png)
+![](/images/ccna/6_Dia_chi_IP/6.png)
 
 > ## **5) Phân loại IP - Private IP và Public IP**
 - **Private IP** : chỉ được sử dụng trong mạng LAN, không được định tuyến trong môi trường Internet, có thể được sử dụng lặp lại trong các mạng LAN khác nhau.
@@ -99,6 +99,6 @@
     - **OUI - Organizationally Unique Identifier** : gồm 3 byte đầu , được sử dụng để định danh nhà cung cấp thiết bị (***vendor***).
     - **NICS - Network Interface Controller Specific** : do nhà sản xuất gán cho thiết bị của mình.
 
-    ![](https://i.imgur.com/aApGwPI.jpg)
+    ![](/images/ccna/6_Dia_chi_IP/7.jpg)
 
 

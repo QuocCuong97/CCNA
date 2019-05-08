@@ -29,7 +29,7 @@
     - **Metric** : là thông tin về metric của 1 tuyến đường , thể hiện "khoảng cách" từ Router hiện tại đến Destination IP . Giá trị này chỉ có ý nghĩa so sánh khi các route sử dụng cùng 1 giao thức định tuyến .
     - **Administrative Distance (AD)** : tham số ưu tiên mà người quản trị đặt cho các tuyến đường trong bảng định tuyến , được gán cho các giao thức . Nếu tuyến đường được cập nhật từ giao thức , nó sẽ mang giá trị AD của giao thức đó . Giá trị này nằm trong khoảng từ 0 đến 255 , càng bé càng ưu tiên ,255 nghĩa là không bao giờ được sử dụng . 
     
-        ![](https://i.imgur.com/Vt6QISX.png)
+        ![](/images/ccna/9_Static_Route/1.png)
 
 
 > ## **5) Cấu trúc lệnh**

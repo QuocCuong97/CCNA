@@ -37,7 +37,7 @@ cho láng giềng của nó . Router láng giềng khi nhận được bản tin
 - **Invalid Timer** : khi Router đã nhận được cập nhật về 1 subnet nào đó mà sau khoảng thời gian **invalid timer** vẫn không nhận lại được cập nhật từ mạng này ( mà đúng ra là `30s/lần` ) , Router sẽ coi route đến subnet này là invalid nhưng vẫn chưa xóa khỏi bản định tuyến . Giá trị default của timer này là `180s` .
 - **Flush Timer** : khi Router đã nhận được cập nhật về 1 subnet nào đó mà khoảng thời gian **flush timer** vẫn không nhận được cập nhật về mạng này ( mà đúng ra phải `30s/lần`  , Router sẽ xóa bỏ hẳn route này ra khỏi bảng định tuyến ) . Giá trị default của timer này là `240s` .
 
-    ![](https://i.imgur.com/8ZcwVhH.png)
+    ![](/images/ccna/12_RIP/1.png)
 > ## **5) So sánh RIPv1 và RIPv2**
 - **RIPv1** là giao thức **classful** trong khi **RIPv2** là giao thức **classless**
 - **RIPv1** sử dụng địa chỉ **broadcast** `255.255.255.255` để gửi đi bản tin cập nhật trong khi **RIPv2** sử dụng địa chỉ **multicast** `224.0.0.9` để gửi đi các bản tin cập nhật .

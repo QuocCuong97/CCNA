@@ -1,6 +1,6 @@
 # Các lệnh cấu hình Router cơ bản
 >## **1) Các thành phần của Router**
-![](https://i.imgur.com/UUW9OVz.jpg)
+![](/images/ccna/8_Cac_lenh_cau_hinh_Router_co_ban/1.jpg)
 
 - **CPU** : bộ xử lý trung tâm.
 

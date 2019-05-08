@@ -4,7 +4,7 @@
 - Được giới thiệu vào năm 1977 do tổ chức ISO. Thực hiện các tác vụ truyền dẫn số liệu, dữ liệu giữa 2 host thành 7 layer từ 1 -> 7
 ### **1.2) Các phân lớp mô hình OSI**
 
-![](https://i.imgur.com/fcHUQ0o.png)
+![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/1.png)
 
 - **Physical Layer (Layer 1)** : chuyển đổi các dữ liệu thành các tín hiệu cơ, điện, quang từ các bit nhị phân (0,1) để truyền trên đường truyền vật lý.
 
@@ -22,7 +22,7 @@
 >## 2) **Mô hình TCP/IP**
 - Mô hình này cũng được sử dụng khá rộng rãi, độ phổ biến tương đương mô hình OSI.
 
-    ![](https://i.imgur.com/oYQMG7U.png)
+    ![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/2.png)
 
 - Khác với OSI, TCP/IP tổ chức dữ liệu theo 4 tầng:
 
@@ -32,12 +32,12 @@
 
     - **Transport Layer (Layer 3)** : tương đương Transport của mô hình OSI. Giao thức nổi tiếng của tầng này là **TCP** và **UDP**.
 
-    - **Application Layer (Layer 4)** : kiêm luôn nhiệm vụ tầng 5, 6, 7 của OSI.
+    - **Application Layer (Layer 4)** : kiêm luôn nhiệm vụ tần 5, 6, 7 của OSI.
 
 - ### **Mô hình TCP/IP 5 Layers**
 
-    ![](https://i.imgur.com/hyfQmDZ.jpg)
+    ![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/3.jpg)
 
 > ## 3) **So sánh Mô hình OSI - TCP/IP**
 
-![](https://i.imgur.com/NcIJMS4.png)
+![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/4.png)
