@@ -68,7 +68,7 @@
 ![](/images/ccna/4_Giao_thuc_TCP_va_UDP/6.jpg)
 
 - **Window Size = 3** nên Sender sẽ gửi lần lượt 3 byte nhưng Receiver chỉ nhận được 2 byte ( do nghẽn mạng, không xử lý nổi ) thì Receiver sẽ **ACK=3** để yêu cầu Sender gửi lại byte thứ 3 đồng thời nó cũng báo hãy sử dụng **Window Size = 2** ( vì nó chỉ chịu nổi size = 2). Sender sau đó sẽ set **Window Size = 2**.
-> ## **4) Truyền dữ liệu Half-duplex và Full-duplex**
+## **4) Truyền dữ liệu Half-duplex và Full-duplex**
 - Trên một môi trường truyền dẫn ( VD trên 1 sợi cáp đồng ), thông tin lan truyền giữa các thiết bị mạng có thể được thực hiện theo nhiều dạng thức khác nhau như : chỉ cho phép truyền 1 chiều ( quá trình t1 ) từ thiết bị mạng này tới thiết bị mạng khác trong 1 đơn vị thời gian, quá trình t2 chỉ được thực hiện khi quá trình t1 kết thúc. Dạng thức này gọi là **Half-duplex**. Trong trường hợp môi trường truyền và các thiết bị mạng có thể hoạt động song song cùng lúc để quá trình t1 và t2 xảy ra đồng thời ta có dạng thức truyền **Full-duplex**.
 
     - **Half-duplex** : giữa 2 đường truyền dữ liệu và luồng tin, chỉ truyền theo 1 hướng tại 1 thời điểm khi 1 thiết bị hoàn thành việc truyền dẫn, nó phải chuyển môi trường truyền đến thiết bị khác. Một thiết bị có thể đóng vai trò THU và PHÁT tín hiệu nhưng tại 1 thời điểm nó chỉ có thể thực hiện 1 vai trò duy nhất.**VD**: Hoạt động của bộ tọa đàm điện thoại, mạng LAN có sử dụng các thiết bị trung tâm là thiết bị Layer 1 thì luôn sử dụng **Half-duplex**.
@@ -80,6 +80,32 @@
 
     - Bên cạnh đó, có thể áp dụng dạng truyền **Simple Mode**. Thông tin chỉ truyền theo 1 chiều quy định trước, một thiết bị chỉ đóng vai trò THU hoặc PHÁT cố định. Hệ thống báo cháy dùng phương thức này
 
-    
-    
+## **5) Các trạng thái TCP ( TCP state transition diagram )**
+<img src=https://i.imgur.com/DGhpH5d.jpg>
+
+- Các kết nối **TCP** tồn tại ở 3 pha :
+    - Thiết lập kết nối
+    - Truyền dữ liệu
+    - Kết thúc kết nối
+- Các trạng thái của socket trong các pha :
+    - `LISTEN`
+    - `SYN-SENT`
+    - `SYN-RECEIVED`
+    - `ESTABLISHED`
+    - `FIN-WAIT`
+    - `CLOSE-WAIT`
+    - `CLOSING`
+    - `LAST-ACK`
+    - `TIME-WAIT`
+    - `CLOSED`
+### **Quá trình thiết lập kết nối ( Three-way Handshake )**
+- Trạng thái kết nối là `LISTEN` khi **Server** đang đợi yêu cầu kết nối từ một TCP và cổng bất kỳ ở xa ( trạng thái này thường do các TCP **server** đặt )
+- Khi **client** muốn thực hiện một phiên kết nối đến **Server** , **client** sẽ gửi một TCP segment với cờ ( **flag** ) `SYN` được thiết lập ( bật ) . Trạng thái kết nối lúc này sẽ là `SYN_SENT` .
+- **Server** sau khi nhận TCP segment của **client** , nó tiến hành đáp lời cho **client** một gói TCP segment với cờ `SYN` và `ACK` được thiết lập . Trạng thái kết nối lúc này sẽ là `SYN_RECEIVED` .
+- **Client** sau khi nhận TCP segment của **Server** , nó tiến hành trả lời cho **Server** một TCP segment với cờ `ACK` được thiết lập . Điều này cho biết quá trình thực hiện bắt tay 3 bước đã hoàn tất . Trạng thái kết nối lúc này là `ESTABLISHED` .
+### **Quá trình hủy kết nối ( Four-way Handshake )**
+- Đóng một kết nối được thực hiện bởi 1 bên gửi TCP segment với cờ `FIN` được thiết lập , giả sử bên **client** sẽ yêu cầu đóng kết nối trước . Quá trình đóng kết nối được bắt đầu bằng việc client gửi 1 TCP Segment với cờ `FIN` được thiết lập . Trạng thái **server** lúc này sẽ là `CLOSE_WAIT` , trạng thái **client** lúc này sẽ là `FIN_WAIT_1` .
+- Sau khi **Server** nhận được TCP segment của **client** , **Server** đáp lời cho **client** một gói TCP segment với cờ `ACK` được bật lên . Tại thời điểm này **client** đi vào trạng thái `FIN_WAIT_2` . 
+- Đến đây xem như **client** đã đóng kết nối , tiếp theo đến **server** đóng kết nối , tương tự giống như **client** , **server** gửi 1 TCP segment với cờ `FIN` được thiết lập đến **client** . Trạng thái **Server** lúc này là `LAST_ACK` , trong khi đó **client** đi vào trạng thái là `TIME_WAIT` .
+- Cuối cùng **client** thừa nhận TCP segment mà **Server** gửi bằng việc nó gửi lại cho **Server** một TCP Segment với cờ `ACK` được thiết lập , trạng thái kết nối lúc này là `CLOSED`
 
