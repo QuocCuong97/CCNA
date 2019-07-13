@@ -34,7 +34,7 @@
 [4) DHCP Relay Agent](https://github.com/QuocCuong97/CCNA/blob/master/docs/26_DHCP_Relay_Agent.md)<br>
 [5) FHRP - First Hop Redundancy Protocol](https://github.com/QuocCuong97/CCNA/blob/master/docs/27_FHRP.md)<br>
 [6) CDP - Cisco Discovery Protocol](https://github.com/QuocCuong97/CCNA/blob/master/docs/28_CDP.md)<br>
-[7) LLDP]()
+[7) LLDP]()<br>
 [8) Telnet](https://github.com/QuocCuong97/CCNA/blob/master/docs/29_Telnet.md)<br>
 [9) SSH - Secure Shell]()
 ### **V) IPv6**
