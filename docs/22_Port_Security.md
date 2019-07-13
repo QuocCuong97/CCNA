@@ -1,5 +1,5 @@
 # Port Security
-> ## **1) Đặc điểm**
+## **1) Đặc điểm**
 - **Port Security** là tính năng Security Layer 2 trên Switch
 - **Port Security** giúp phòng chống dạng tấn công phổ biến như giả MAC hay không cho người dùng hợp lệ truy cập vào mạng .
 - **Port Security** cho phép nhận diện địa chỉ 1 port nào đó được gắn với MAC tương ứng và có hành vi xử lý khi rule bị vi phạm .
@@ -8,8 +8,9 @@
 - Không thể cấu hình **port-secutiry** trên destination port **SPAN** .
 - Không thể cấu hình **port-security** trên các **port-channel** .
 
-    ![](/images/ccna/22_Port_Security/1.jpg)
-> ## **2) Cấu hình Port Security**
+    <img src=https://i.imgur.com/OcVFrCv.jpg>
+    
+## **2) Cấu hình Port Security**
 - Đưa port về mode **Access** ( bắt buộc ) :
     ```
     Switch(config-if) # switchport mode access

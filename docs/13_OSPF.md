@@ -1,5 +1,5 @@
 # OSPF - Open Shortest Path First ( O )
-> ## **1) Đặc điểm**
+## **1) Đặc điểm**
 - Là 1 giao thức Link-state điển hình . Mỗi Router khi chạy giao thức sẽ gửi bản tin **LSA ( *Link-State Advertisement* )** của nó cho tất cả các Router trong vùng ( **area** ) . Sau 1 thời gian trao đổi , các Router sẽ đồng nhất bảng cơ sở dữ liệu **LSDB ( *Link-State Database* )** với nhau , mỗi Router đều có được "bản đồ mạng" của cả vùng . Từ đó mỗi Router sẽ chạy giải thuật ***Dijkstra*** tính toán ra 1 cây đường đi ngắn nhất ( ***Shortest Path Tree*** ) và dựa vào cây này để xây dựng bảng định tuyến .
 - **OSPF** có **AD** = `110`
 - **Metric** = `(10^8)\bandwidth`
@@ -10,12 +10,12 @@
 - Hỗ trợ xác thực
 - Khả năng mở rộng tốt , được khuyến nghị dùng cho môi trường mạng có quy mô lớn
 - Sử dụng loại địa chỉ **Multicast** `224.0.0.5` và `224.0.0.6`
-> ## **2) Hoạt động của OSPF**
+## **2) Hoạt động của OSPF**
 - **B1** : Bầu chọn Router-id
 - **B2** : Thiết lập quan hệ láng giềng
 - **B3** : Trao đổi trạng thái đường link **LSA**
 - **B4** : Tính toán xây dựng bảng định tuyến
-> ## **3) Các thuật ngữ cơ bản**
+## **3) Các thuật ngữ cơ bản**
 - **Router-ID** :
     - Đầu tiên , khi 1 Router chạy **OSPF** , nó phải xây dựng một giá trị dùng để định danh duy nhất cho nó trong các Router chạy **OSPF** . Giá trị này được gọi là **Router-ID** .
     - **Router-ID** của Router chạy **OSPF** có định dạng 1 địa chỉ IP . Mặc định , tiến trình **OSPF** trên mỗi Router sẽ tự động bầu chọn **Router-ID** là địa chỉ IP cao nhất trong các interface đang ***active ( up/up )*** , ưu tiên cổng `Loopback ` .
@@ -24,7 +24,7 @@
     - Mỗi vùng sẽ có giá trị định danh là **Area-ID** . **Area-ID** có thể được hiển thị dưới dạng 1 số tự nhiên hoặc dưới dạng 1 địa chỉ IP . **VD :** Vùng 1 có thể được hiển thị là "`area 1`" hoặc "`area 0.0.0.1`" .
     - Một nguyên tắc bắt buộc trong phân vùng **OSPF** là nếu chia thành nhiều vùng thì bắt buộc phải tồn tại 1 vùng mang số hiệu `0` - `Area 0` . `Area 0` còn được gọi là **Backbone Area** và mọi vùng khác bắt buộc phải có kết nối về `area 0` .
 
-        ![](/images/ccna/13_OSPF/1.png)
+        <img src=https://i.imgur.com/OTS5urs.png>
 
     - Trong thao tác cấu hình , **Area-ID** được gán cho link của Router chứ không phải gán cho bản thân Router . Về bản chất , với **OSPF** , không có khái niệm Router thuộc về 1 **area** và chỉ có khái niệm link của Router thuộc về **area** nào .
     - Những Router mà có tất cả các link đều được gắn vào 1 **area** thì sẽ lọt hẳn vào **area** đó và được gọi là các **Internal Router** ( VD như R4 của area 1 ) , các **Internal Router** chỉ việc ghi nhớ trạng thái đường link của Router thuộc về vùng mà nó nằm bên trong . Những Router có các link thuộc về các vùng khác nhau được gọi là các **ABR Router** ( **Area Border Router** ) ( VD như R2 và R3) .
@@ -41,14 +41,14 @@
 > ## **4) Các môi trường OSPF**
 - ### **Serial Point-to-Point**
 
-    ![](/images/ccna/13_OSPF/2.png)
+    <img src=https://i.imgur.com/1xg08uC.png>
 
     - Hai Router láng giềng sẽ ngay lập tức trao đổi thông tin cho nhau qua kết nói Point-to-Point và chuyển trạng thái quan hệ từ 2-WAY sang mức độ **FULL** . Quan hệ **FULL** giữa 2 Router kết nối qua Serial Pont-to-Point được ký hiệu là "`FULL/- `"
 - ### **Broadcast MultiAccess**
     - Là môi trường Ethernet LAN .
     - Trong mỗi MultiAccess , một **DR** Router sẽ được bầu ra . Một Router khác đóng vai trò là **Backup DR (BDR)** để đề phòng **DR** bị ***down*** . Các Router còn lại gọi là **DROther** . Các Router **DROther** khi trao đổi thông tin định tuyến sẽ không gửi trực tiếp cho nhau mà sẽ gửi lên cho **DR** và **BDR** . Sau đó **DR** này sẽ forward gói tin xuống cho các **DROther** .
     - Thông tin **OSPF** được gửi đến **DR / BDR** theo địa chỉ `224.0.0.6` và được **DR** chuyển xuống **DROther** theo địa chỉ `224.0.0.5` .
-> ## **5) Quá trình bầu chọn DR và BDR**
+## **5) Quá trình bầu chọn DR và BDR**
 - **DR - Designated Router**
 - **BDR - Backup Designated Router**
 - **DROther** - Các Router còn lại chạy **OSPF**
@@ -63,7 +63,7 @@
 - Quan hệ giữa các cặp Router
     - Các **DROther** không bao giờ trao đổi trạng thái đường link với nhau nên mối quan hệ giữa chúng chỉ dừng ở mức độ 2-WAY .
     - Các **DROther** có trao đổi dữ liệu với **DR** và **BDR** => quan hệ láng giềng với các Router **DR** và **BDR** sẽ là **FULL**
-> ## **6) Tính toán Metric với OSPF**
+## **6) Tính toán Metric với OSPF**
 - **Metric** trong **OSPF** là `cost` tích lũy trên đường đi đến mạng đích . Giá trị `cost` trên mỗi cổng được xác định dựa vào `bandwidth` trên cổng theo công thức
 ```
                 Metric = (10^8) / bandwidth(bps)
@@ -75,7 +75,7 @@
 | Gigabit Ethernet | 1000000 | 0.1 |
 | Serial | 1544 | 64 |
 | Loopback | 10000 | 10 |
-> ## **7) Cấu trúc lệnh OSPF**
+## **7) Cấu trúc lệnh OSPF**
 ```
 Router(config) # router ospf [process-id]
 Router(config-router) # network [connected network] [wildcard mask] area [area-id]

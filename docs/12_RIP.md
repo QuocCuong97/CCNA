@@ -1,6 +1,6 @@
 # RIP - Routing Information Protocol ( R ) 
 ## **RIPv2**
-> ## **1) Đặc điểm**
+## **1) Đặc điểm**
 - Thuộc dạng **Distance Vector**
 - Sử dụng port `520 UDP`
 - Giao thức **classless** ( `subnet-mask` đi kèm với `IP` )
@@ -14,7 +14,7 @@
 - Thực thi **Triggered Update**
 - Giá trị **AD** cho **RIPv2** là `120`
 - Không có khả năng mở rộng . Được sử dụng trong các mạng nhỏ , phẳng hoặc ở rìa các mạng lớn hơn .
-> ## **2) Ưu điểm và nhược điểm**
+## **2) Ưu điểm và nhược điểm**
 ### **2.1) Ưu điểm**
 - Dễ dàng triển khai
 - Không hạn chế khả năng thiết kế
@@ -23,7 +23,7 @@
 - Tiêu tốn lượng lớn băng thông trong quá trình gởi bản tin **Broadcast** mỗi `30s/lần`
 - Không có khả năng mở rộng vì giá trị cao nhất của `hop count ` = `15`
 - Hội tụ mạng chậm
-> ## **3) Các quy tắc chống loop**
+## **3) Các quy tắc chống loop**
 - **Split-horizon** : Khi Router nhận được cập nhật định tuyến cho một subnet từ phía cổng nào thì nó sẽ không gửi ngược lại cập nhật này về phía cổng mà nó nhận được nữa .
     - **VD :** R2 sẽ không gửi lại thông tin mà nó học được từ R3 cho R3
 - **Route-Poisoning** : Khi một subnet kết nối trực tiếp chuyển sang shutdown , Router sẽ gửi đi 1 bản tin cập nhật cho subnet này có **metric** = `16` ( *infinity metric* )
@@ -32,17 +32,17 @@ cho láng giềng của nó . Router láng giềng khi nhận được bản tin
 - **Poison-Reverse** : Khi Router láng giềng nhận được bản tin update cho 1 subnet down có **metric** = `16` , nó cũng phải ngay lập tức hồi đáp về cho láng giềng một bản tin cập nhật cho subnet ấy cũng với **metric** = `16` . Hoạt động này được gọi là **Poison-Reverse**.
 - **Trigger-Update** : việc phát ra các bản tin **Route-poisoning** và **Poison-Reverse** phải được thực hiện ngay lập tức mà không cần chờ tới hạn định kỳ gửi cập nhật định tuyến gọi là **Trigger-Update**
 - **Holddown Timer** : Sau khi nhận được một poisoned route , Router sẽ khởi động bộ định thời **Holddown Timer** cho route này . Trước khi bộ Timer này hết hạn , không tin tưởng bất kỳ thông tin định tuyến nào khác , ngoại trừ thông tin đến từ chính láng giềng đã cập nhật cho mình route này đầu tiên . Giá trị default của **Holddown Timer** là `180s`.
-> ## **4) Các Timer trong RIP**
+## **4) Các Timer trong RIP**
 - **Update Timer** : khoảng thời gian định kỳ gửi bản tin cập nhật định tuyến ra khỏi các cổng chạy **RIP** , giá trị default là `30s` . 
 - **Invalid Timer** : khi Router đã nhận được cập nhật về 1 subnet nào đó mà sau khoảng thời gian **invalid timer** vẫn không nhận lại được cập nhật từ mạng này ( mà đúng ra là `30s/lần` ) , Router sẽ coi route đến subnet này là invalid nhưng vẫn chưa xóa khỏi bản định tuyến . Giá trị default của timer này là `180s` .
 - **Flush Timer** : khi Router đã nhận được cập nhật về 1 subnet nào đó mà khoảng thời gian **flush timer** vẫn không nhận được cập nhật về mạng này ( mà đúng ra phải `30s/lần`  , Router sẽ xóa bỏ hẳn route này ra khỏi bảng định tuyến ) . Giá trị default của timer này là `240s` .
 
-    ![](/images/ccna/12_RIP/1.png)
-> ## **5) So sánh RIPv1 và RIPv2**
+    <img src=https://i.imgur.com/YtbNpTo.png>
+## **5) So sánh RIPv1 và RIPv2**
 - **RIPv1** là giao thức **classful** trong khi **RIPv2** là giao thức **classless**
 - **RIPv1** sử dụng địa chỉ **broadcast** `255.255.255.255` để gửi đi bản tin cập nhật trong khi **RIPv2** sử dụng địa chỉ **multicast** `224.0.0.9` để gửi đi các bản tin cập nhật .
 - **RIPv1** không hỗ trợ xác thực trong định tuyến trong khi **RIPv2** có hỗ trợ xác thực
-> ## **6) Cấu trúc lệnh**
+## **6) Cấu trúc lệnh**
 ```
 Router(config) # router rip
 Router(config-router) # version 2

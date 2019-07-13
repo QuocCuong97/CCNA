@@ -1,16 +1,16 @@
 # Etherchannel
-> ## **1) Mục đích ra đời**
+## **1) Mục đích ra đời**
 - Để tăng băng thông đấu nối giữa các Switch , ta có thể sử dụng nhiều đường nối song song giữa các Switch .
 - Nhược điểm :
     - Tốn kinh phí
     - Bị khóa 1 link theo giao thức **STP**
 
-    ![](/images/ccna/21_Etherchannel/1.png)
+        <img src=https://i.imgur.com/Au2dCO4.png>
 
     => Giải pháp **Etherchannel** : một Switch sẽ thực hiện "bó" nhiều đường đấu nối thành 1 đường duy nhất , coi các đường này chỉ như 1 đường .
-> ## **2) Đặc điểm**
+## **2) Đặc điểm**
 
-![](/images/ccna/21_Etherchannel/2.png)
+<img src=https://i.imgur.com/4tlF4eN.png>
 
 - Mỗi cổng **Etherchannel** bó được tối đa `8` cổng vật lý cùng loại .
 - Các cổng phải được thống nhất về :
@@ -29,7 +29,7 @@
         Xét 2 nhị phân a và b : a XOR b = | 0 , nếu a = b
                                           | 1 , nếu a != b
         ```
-> ## **3) Các giao thức thiết lập Etherchannel**
+## **3) Các giao thức thiết lập Etherchannel**
 - Có 2 giao thức được sử dụng để thương lượng **Etherchannel** trên các Switch Cisco :
     - **PAgP - Port Aggregation Protocol** : là giao thức chuẩn của Cisco , chỉ chạy trên các Switch Cisco .
     - **LACP - Link Aggregation Control Protocol** : là giao thức chuẩn quốc tế của IEEE , được chuẩn hóa bởi ***IEEE 802.3ad*** .
@@ -47,11 +47,11 @@
             - **Chủ động** = ***Active***
             - **Bị động** = ***Passive***
 
-            ![](/images/ccna/21_Etherchannel/3.jpg)
+                <img src=https://i.imgur.com/86N2Vc0.jpg>
 
-> ## **4) Cấu hình Etherchannel**
+## **4) Cấu hình Etherchannel**
 
-![](/images/ccna/21_Etherchannel/4.png)
+<img src=https://i.imgur.com/l4rx7Oh.png>
 
 ### **4.1) Cấu hình tĩnh**
 - Đi vào mode cấu hình của các cổng thành phần và dùng lệnh :

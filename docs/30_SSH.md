@@ -1,10 +1,10 @@
 # SSH - Secure Socket Shell
-> ## **1) Khái niệm**
+## **1) Khái niệm**
 - Là giải pháp truy nhập từ xa có tính bảo mật cao thường được dùng để thay thế Telnet vì trong Telnet , dữ liệu được trao đổi giữa **Client** và **Server** được để ở dạng ***ClearText*** , dẫn đến có thể bị xem trộm .
 - Là 1 ứng dụng chạy nền `TCP` , sử dụng port `22` .
 - **SSH** có 2 version `1` và `2` không tương thích với nhau . Ver `2` được khuyến nghị sử dụng vì an toàn hơn ver `1` .
-> ## **2) Cấu hình SSH trên Router**
-![](/images/ccna/30_SSH/Screenshot_1.png)
+## **2) Cấu hình SSH trên Router**
+<img src=https://i.imgur.com/d8IoWpq.png>
 
 - Cấu hình 1 domain-name :
     ```
@@ -35,4 +35,4 @@
     - Chọn giao thức kết nối ( `SSH` ) và port ( `22` )
     - Nhấn `Open` để mở phiên kết nối
 
-        ![](/images/ccna/30_SSH/Screenshot_2.png)
+        <img src=https://i.imgur.com/PQaLJRe.png>

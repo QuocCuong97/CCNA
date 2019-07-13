@@ -11,18 +11,19 @@
     - **Platform :** chủng loại của thiết bị láng giềng .
     - **Địa chỉ IP** của láng giềng .
     - **IOS :** hệ điều hành của láng giềng .
-> ### **Các thao tác với CDP**
+## **Các thao tác với CDP**
 - Xem thông tin láng giềng :
     ```
     Router# show cdp neighbor
     ```
-    ![](/images/ccna/28_CDP/Screenshot_2.png)
+    <img src=https://i.imgur.com/D6hq2XG.png>
 - Xem thông tin chi tiết về láng giềng :
     ```
     Router# show cdp neighbor detail
     Router# show cdp entry *
     ```
-    ![](/images/ccna/28_CDP/Screenshot_1.png)
+    <img src=https://i.imgur.com/83w5eYz.png>
+    
 - Bật / Tắt **CDP** trên các cổng :
     ```
     Router(config) # [no] cdp run

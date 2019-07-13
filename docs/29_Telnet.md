@@ -1,13 +1,13 @@
 # Telnet - Teletype Network
-> ## **1) Khái niệm**
+## **1) Khái niệm**
 - Là 1 kỹ thuật cho phép truy nhập từ xa thiết bị để thực hiện các tác vụ cấu hình mà không cần cắm dây console trực tiếp lên thiết bị .
 - Là 1 giao thức chạy trên nền `TCP` , sử dụng port `23` .
 - Hoạt động theo mô hình ***Client-Server*** : trên thiết bị được Telnet phải được tích hợp dịch vụ **Telnet Server** và trên host tiến hành telnet phải tích hợp **Telnet Client** . Cisco IOS tích hợp cả 2 dịch vụ trên .
 - Lưu lượng Telnet được tiếp nhận qua đường logic có tên là **VTY - Virtual Teletype** .
 - Trên Router , các đường **VTY** có số hiệu từ `0` đến `4` ( 5 sessions ) .
 - Trên Switch , các đường **VTY** có số hiệu từ `0` đến `15` ( 16 sessions ) .
-> ## **2) Cấu hình Telnet**
-![](/images/ccna/29_Telnet/Screenshot_1.png)
+## **2) Cấu hình Telnet**
+<img src=https://i.imgur.com/9rOCdz7.png>
 
 - Trên R1 , cấu hình cổng **VTY** cho phép Telnet :
     ```
@@ -32,8 +32,8 @@
     hoặc
     R1# show users
     => R1# clear line [VTY number]
-### ***Chú ý***
+>### ***Chú ý***
 - Mặc định trên Windows không cài **Telnet Client** .
 - Vào **Control Panel => Program and Features => Turn Windows Feature on or off => Chọn Telnet Client => OK** để cài đặt
 
-    ![](/images/ccna/29_Telnet/Screenshot_2.png)
+    <img src=https://i.imgur.com/Ef2v3BI.png>

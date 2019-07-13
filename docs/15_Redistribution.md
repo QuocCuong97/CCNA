@@ -1,5 +1,5 @@
 # Redistribution
-> ## **1) Redistribute into EIGRP**
+## **1) Redistribute into EIGRP**
 ```
 Router(config) # router eigrp [AS]
 ```
@@ -19,7 +19,7 @@ Router(config) # router eigrp [AS]
 - **Connected Route** => **EIGRP**
     ```
     Router(config-router) # redistribute connected
-> ## **2) Redistribute into OSPF**
+## **2) Redistribute into OSPF**
 ```
 Router(config) # router ospf [process-id]
 ```
@@ -43,7 +43,7 @@ Router(config) # router ospf [process-id]
     ```
     Router(config-router) # redistribute connected subnets
     ```
-> ## **3) Redistribute into RIP**
+## **3) Redistribute into RIP**
 ```
 Router(config) # router rip
 ```
