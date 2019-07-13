@@ -92,7 +92,7 @@
 </center>
 
 ### **Chuẩn TIA/EIA 568B**
-<center>
+<p align=center>
 <table>
     <tr>
         <th>PIN</th>
@@ -140,7 +140,7 @@
         <th>-</th>
     </tr>
 </table>
-</center>
+</p>
 
 ### **Cáp thẳng ( Straigh-Through ) và Cáp chéo ( Cross-Over )**
 
