@@ -1,10 +1,10 @@
 # Mô hình OSI và TCP/IP
->## **1) Mô hình OSI**
+## **1) Mô hình OSI**
 ### **1.1) Giới thiệu**
 - Được giới thiệu vào năm 1977 do tổ chức ISO. Thực hiện các tác vụ truyền dẫn số liệu, dữ liệu giữa 2 host thành 7 layer từ 1 -> 7
 ### **1.2) Các phân lớp mô hình OSI**
 
-![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/1.png)
+<img src=https://i.imgur.com/lXntthS.png>
 
 - **Physical Layer (Layer 1)** : chuyển đổi các dữ liệu thành các tín hiệu cơ, điện, quang từ các bit nhị phân (0,1) để truyền trên đường truyền vật lý.
 
@@ -19,10 +19,10 @@
 - **Presentation Layer (Layer 6)** : thực hiện translate 2 ứng dụng giữa 2 host với nhau để 2 host này có thể hiểu và giao tiếp được với nhau.
 
 - **Application Layer (Layer 7)** : giao diện tương tác trực tiếp giữa các ứng dụng và dịch vụ mạng đến người dùng.
->## 2) **Mô hình TCP/IP**
+## 2) **Mô hình TCP/IP**
 - Mô hình này cũng được sử dụng khá rộng rãi, độ phổ biến tương đương mô hình OSI.
 
-    ![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/2.png)
+    <img src=https://i.imgur.com/oDHWrEA.png>
 
 - Khác với OSI, TCP/IP tổ chức dữ liệu theo 4 tầng:
 
@@ -36,8 +36,7 @@
 
 - ### **Mô hình TCP/IP 5 Layers**
 
-    ![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/3.jpg)
+    <img src=https://i.imgur.com/wMXLKUq.jpg>
 
-> ## 3) **So sánh Mô hình OSI - TCP/IP**
-
-![](/images/ccna/3_Mo_hinh_OSI_va_TCP_IP/4.png)
+## 3) **So sánh Mô hình OSI - TCP/IP**
+<img src=https://i.imgur.com/eRlr5qd.png>

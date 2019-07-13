@@ -1,5 +1,5 @@
 # Giao thức ICMP
-> ## **1) ICMP ( Internet Control Messenger Protocol )**
+## **1) ICMP ( Internet Control Messenger Protocol )**
 ### **1.1) Khái niệm**
 - Do **IP** không có cơ chế để biết được dữ liệu đã được gửi đến đích hay chưa => **ICMP** ra đời
 - **ICMP messenger** đơn giản chỉ có nhiệm vụ thông báo cho sender biết việc data gửi đi có vấn đề .<br>**VD :** Host A gửi 1 `packet` đến host Z , nhưng do một số nguyên nhân mà gói tin không gửi tới đúng đích.
@@ -8,7 +8,8 @@
 - Host đích không hỗ trợ upper-layer protocol , được gọi là **unreachable protocol** .
 - Host đích không hỗ trợ loại dịch vụ cần truy cập , gọi là **unreachable port/socket** .
 ### **1.2) Định dạng gói tin ICMP**
-![](/images/ccna/5_Giao_thuc_ICMP/Screenshot_1.png)
+<img src=https://i.imgur.com/BEBEnMH.png>
+
 - Gói tin **ICMP** :
     - **CHECKSUM** ( `16bit` ) : **ICMP** sử dụng thuận toán checksum như **IP** , nhưng **ICMP checksum** chỉ tính đến thông điệp **ICMP** .
     - **CODE** ( `8bit` ) : cung cấp thêm thông tin về kiểu thông điệp .
@@ -42,7 +43,7 @@
         | 38 | Domain name reply |
         | 39 | SKIP |
         | 40 | Photuris |
-> ### **1.3) Các loại ICMP messenger thường thấy**
+### **1.3) Các loại ICMP messenger thường thấy**
 ####  **ICMP echo messenger**
 - Có 2 loại là **echo request** và **reply messenger** tương ứng với các trường :
     + **TYPE** = `0` => **echo request , code** = `0`
@@ -101,7 +102,7 @@
 - Được dùng để báo cho sender biết có congestion và hỏi sender xem có giảm tốc độ gửi packet đi không.
 - Thuộc loại Flow-Control messenger
     - **TYPE** = `4` , **CODE**= `0`
-> ## **2) Công cụ PING**
+## **2) Công cụ PING**
 - Là 1 công cụ phổ biến để kiểm tra xem 1 host nào đó có thể đi được qua mạng IP hay không .
 - Sử dụng 2 loại gói tin :
     + **ICMP Echo Request**
@@ -120,11 +121,11 @@
     - `!!!!!` : Ping Successfully
     - `?????` : Unknown packet type
     - `.....` : Timed out while waiting for a reply
-> ## **3) Công cụ TRACERT**
+## **3) Công cụ TRACERT**
 - Là 1 tiện ích trên hệ điều hành Windows cho phép xác định lộ trình từ PC đến 1 đích nào đó phải đi qua các hop nào .
 - Địa chỉ IP của các Router trên đường đi đều phải được hiển thị trên bảng tracert .
 - Lệnh : `C:\> tracert [IP/host]`
-> ## **4) Công cụ TRACEROUTE**
+## **4) Công cụ TRACEROUTE**
 - Là 1 tiện ích của Cisco IOS có chức năng tương tự **TRACERT** của Windows .
 - Lệnh : `Router# traceroute [IP/host]`
 
