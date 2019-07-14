@@ -99,11 +99,15 @@
     - `TIME-WAIT`
     - `CLOSED`
 ### **Quá trình thiết lập kết nối ( Three-way Handshake )**
+<img src=https://i.imgur.com/loUstFi.png>
+
 - Trạng thái kết nối là `LISTEN` khi **Server** đang đợi yêu cầu kết nối từ một TCP và cổng bất kỳ ở xa ( trạng thái này thường do các TCP **server** đặt )
 - Khi **client** muốn thực hiện một phiên kết nối đến **Server** , **client** sẽ gửi một TCP segment với cờ ( **flag** ) `SYN` được thiết lập ( bật ) . Trạng thái kết nối lúc này sẽ là `SYN_SENT` .
 - **Server** sau khi nhận TCP segment của **client** , nó tiến hành đáp lời cho **client** một gói TCP segment với cờ `SYN` và `ACK` được thiết lập . Trạng thái kết nối lúc này sẽ là `SYN_RECEIVED` .
 - **Client** sau khi nhận TCP segment của **Server** , nó tiến hành trả lời cho **Server** một TCP segment với cờ `ACK` được thiết lập . Điều này cho biết quá trình thực hiện bắt tay 3 bước đã hoàn tất . Trạng thái kết nối lúc này là `ESTABLISHED` .
 ### **Quá trình hủy kết nối ( Four-way Handshake )**
+<img src=https://i.imgur.com/aONeVxa.png>
+
 - Đóng một kết nối được thực hiện bởi 1 bên gửi TCP segment với cờ `FIN` được thiết lập , giả sử bên **client** sẽ yêu cầu đóng kết nối trước . Quá trình đóng kết nối được bắt đầu bằng việc client gửi 1 TCP Segment với cờ `FIN` được thiết lập . Trạng thái **server** lúc này sẽ là `CLOSE_WAIT` , trạng thái **client** lúc này sẽ là `FIN_WAIT_1` .
 - Sau khi **Server** nhận được TCP segment của **client** , **Server** đáp lời cho **client** một gói TCP segment với cờ `ACK` được bật lên . Tại thời điểm này **client** đi vào trạng thái `FIN_WAIT_2` . 
 - Đến đây xem như **client** đã đóng kết nối , tiếp theo đến **server** đóng kết nối , tương tự giống như **client** , **server** gửi 1 TCP segment với cờ `FIN` được thiết lập đến **client** . Trạng thái **Server** lúc này là `LAST_ACK` , trong khi đó **client** đi vào trạng thái là `TIME_WAIT` .
