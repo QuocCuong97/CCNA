@@ -36,51 +36,7 @@
     - **16-bit UDP checksum** : sử dụng thuật toán mã vòng CRC để kiểm soát lỗi ( chỉ kiểm tra 1 cách hạn chế ).
 
 - Các ứng dụng sử dụng UDP là : VoIP, video conference, DNS, TFTP,...
-## **3) Tiến trình bắt tay 3 bước ( Three-way handshake )**
-
-<img src=https://i.imgur.com/qzzixQx.png>
-
-### **Giải thích**
-- **B1** : Host A gửi cho host B 1 gói tin có cờ **SYN** được bật, với số thứ tự được đánh là 100.
-
-- **B2** : Host B nhận được gói tin thì B gửi lại gói tin có cờ **SYN** được bật lên, kèm theo đó là cờ **ACK** ( để xác nhận ).
-
-    **ACK=101** nghĩa là " này A, tôi đã nhận được gói tin có **SEQ=100**, tôi mong muốn nhận được thêm gói tin có **SEQ=101** ". Khi gửi gói tin đi nó sẽ đánh số thứ tự **SEQ=300**
-
-- **B3** : Sau khi kết nối đã được thiết lập thì A gửi gói tin để đáp ứng nhu cầu của B.
-    Gói tin được đánh số **SEQ=101** : để đáp ứng nhu cầu của B
-
-    **ACK=301** dùng để báo là đã nhận được gói tin có **SEQ=300**. Và chỉ có cờ **ACK** được bật lên bởi gói tin bước 3 được dùng để báo nhận cho gói tin bước 2.
-
-### **Cơ chế điều khiển luồng trong TCP ( TCP Flow Control)**
-
-<img src=https://i.imgur.com/m9hceP9.jpg>
-
-- Giả sử : Sender gửi quá nhiều dữ liệu cho Receiver, thì Receiver sẽ chuyển vào bộ đệm để chờ xử lý, đến lúc bộ đệm đầy thì B gửi tín hiệu cho A để không truyền nữa cho đến khi B xử lý hết thì sẽ gửi lại gói tin cho A để tiếp tục nhận dữ liệu.
-### **Fixed Windowing**
-
-<img src=https://i.imgur.com/vAR22pe.jpg>
-
-- Thay vì gửi từng byte rồi đợi **ACK** thì sender sẽ gửi nhiều byte cùng lúc ( **Window Size** bằng bao nhiêu sẽ gửi bấy nhiêu ).
-- Ở cơ chế **Fixed Windowing** thì **Window Size** cố định, nhưng có trường hợp không thể giữ cố định được.
-### **TCP Sliding Windowing ( Window Size có thể thay đổi)**
-
-<img src=https://i.imgur.com/yWgOQAF.jpg>
-
-- **Window Size = 3** nên Sender sẽ gửi lần lượt 3 byte nhưng Receiver chỉ nhận được 2 byte ( do nghẽn mạng, không xử lý nổi ) thì Receiver sẽ **ACK=3** để yêu cầu Sender gửi lại byte thứ 3 đồng thời nó cũng báo hãy sử dụng **Window Size = 2** ( vì nó chỉ chịu nổi size = 2). Sender sau đó sẽ set **Window Size = 2**.
-## **4) Truyền dữ liệu Half-duplex và Full-duplex**
-- Trên một môi trường truyền dẫn ( VD trên 1 sợi cáp đồng ), thông tin lan truyền giữa các thiết bị mạng có thể được thực hiện theo nhiều dạng thức khác nhau như : chỉ cho phép truyền 1 chiều ( quá trình t1 ) từ thiết bị mạng này tới thiết bị mạng khác trong 1 đơn vị thời gian, quá trình t2 chỉ được thực hiện khi quá trình t1 kết thúc. Dạng thức này gọi là **Half-duplex**. Trong trường hợp môi trường truyền và các thiết bị mạng có thể hoạt động song song cùng lúc để quá trình t1 và t2 xảy ra đồng thời ta có dạng thức truyền **Full-duplex**.
-    - **Half-duplex** : giữa 2 đường truyền dữ liệu và luồng tin, chỉ truyền theo 1 hướng tại 1 thời điểm khi 1 thiết bị hoàn thành việc truyền dẫn, nó phải chuyển môi trường truyền đến thiết bị khác. Một thiết bị có thể đóng vai trò THU và PHÁT tín hiệu nhưng tại 1 thời điểm nó chỉ có thể thực hiện 1 vai trò duy nhất.**VD**: Hoạt động của bộ tọa đàm điện thoại, mạng LAN có sử dụng các thiết bị trung tâm là thiết bị Layer 1 thì luôn sử dụng **Half-duplex**.
-    
-        <img src=https://i.imgur.com/sQVEN0y.png>
-
-    - **Full-duplex** : cho phép dữ liệu truyền đồng thời trên cả 2 đường, mỗi thiết kế sẽ có 1 kênh riêng. Mỗi thiết bị có thể đồng thời vừa PHÁT lại vừa THU tín hiệu. Các modem máy tính đều hoạt động theo phương thức này, mạng LAN sử dụng toàn thiết bị tập trung Layer 2 hoặc 2 máy tính kết nối trực tiếp với nhau đều có thể sử dụng.
-
-        <img src=https://i.imgur.com/KLk3KWj.png>
-
-    - Bên cạnh đó, có thể áp dụng dạng truyền **Simple Mode**. Thông tin chỉ truyền theo 1 chiều quy định trước, một thiết bị chỉ đóng vai trò THU hoặc PHÁT cố định. Hệ thống báo cháy dùng phương thức này
-
-## **5) Các trạng thái TCP ( TCP state transition diagram )**
+## **3) Các trạng thái TCP ( TCP state transition diagram )**
 <img src=https://i.imgur.com/DGhpH5d.jpg>
 
 - Các kết nối **TCP** tồn tại ở 3 pha :
@@ -101,15 +57,44 @@
 ### **Quá trình thiết lập kết nối ( Three-way Handshake )**
 <img src=https://i.imgur.com/loUstFi.png>
 
-- Trạng thái kết nối là `LISTEN` khi **Server** đang đợi yêu cầu kết nối từ một TCP và cổng bất kỳ ở xa ( trạng thái này thường do các TCP **server** đặt )
-- Khi **client** muốn thực hiện một phiên kết nối đến **Server** , **client** sẽ gửi một TCP segment với cờ ( **flag** ) `SYN` được thiết lập ( bật ) . Trạng thái kết nối lúc này sẽ là `SYN_SENT` .
-- **Server** sau khi nhận TCP segment của **client** , nó tiến hành đáp lời cho **client** một gói TCP segment với cờ `SYN` và `ACK` được thiết lập . Trạng thái kết nối lúc này sẽ là `SYN_RECEIVED` .
-- **Client** sau khi nhận TCP segment của **Server** , nó tiến hành trả lời cho **Server** một TCP segment với cờ `ACK` được thiết lập . Điều này cho biết quá trình thực hiện bắt tay 3 bước đã hoàn tất . Trạng thái kết nối lúc này là `ESTABLISHED` .
+- Trạng thái kết nối là `LISTEN` khi **Host B** đang đợi yêu cầu kết nối từ một TCP và cổng bất kỳ ở xa ( trạng thái này thường do các TCP **server** đặt )
+- Khi **Host A** muốn thực hiện một phiên kết nối đến **Host B** , **client** sẽ gửi một TCP segment với cờ ( **flag** ) `SYN` được thiết lập ( bật ) . Trạng thái kết nối lúc này sẽ là `SYN_SENT` .
+- **Host B** sau khi nhận TCP segment của **Host A** , nó tiến hành đáp lời cho **Host A** một gói TCP segment với cờ `SYN` và `ACK` được thiết lập . Trạng thái kết nối lúc này sẽ là `SYN_RECEIVED` .
+- **Host A** sau khi nhận TCP segment của **Host B** , nó tiến hành trả lời cho **Host B** một TCP segment với cờ `ACK` được thiết lập . Điều này cho biết quá trình thực hiện bắt tay 3 bước đã hoàn tất . Trạng thái kết nối lúc này là `ESTABLISHED` .
 ### **Quá trình hủy kết nối ( Four-way Handshake )**
 <img src=https://i.imgur.com/aONeVxa.png>
 
-- Đóng một kết nối được thực hiện bởi 1 bên gửi TCP segment với cờ `FIN` được thiết lập , giả sử bên **client** sẽ yêu cầu đóng kết nối trước . Quá trình đóng kết nối được bắt đầu bằng việc client gửi 1 TCP Segment với cờ `FIN` được thiết lập . Trạng thái **server** lúc này sẽ là `CLOSE_WAIT` , trạng thái **client** lúc này sẽ là `FIN_WAIT_1` .
-- Sau khi **Server** nhận được TCP segment của **client** , **Server** đáp lời cho **client** một gói TCP segment với cờ `ACK` được bật lên . Tại thời điểm này **client** đi vào trạng thái `FIN_WAIT_2` . 
-- Đến đây xem như **client** đã đóng kết nối , tiếp theo đến **server** đóng kết nối , tương tự giống như **client** , **server** gửi 1 TCP segment với cờ `FIN` được thiết lập đến **client** . Trạng thái **Server** lúc này là `LAST_ACK` , trong khi đó **client** đi vào trạng thái là `TIME_WAIT` .
-- Cuối cùng **client** thừa nhận TCP segment mà **Server** gửi bằng việc nó gửi lại cho **Server** một TCP Segment với cờ `ACK` được thiết lập , trạng thái kết nối lúc này là `CLOSED`
+- Đóng một kết nối được thực hiện bởi 1 bên gửi TCP segment với cờ `FIN` được thiết lập , giả sử bên **Host A** sẽ yêu cầu đóng kết nối trước . Quá trình đóng kết nối được bắt đầu bằng việc **Host A** gửi 1 TCP Segment với cờ `FIN` được thiết lập . Trạng thái **Host B** lúc này sẽ là `CLOSE_WAIT` , trạng thái **Host A** lúc này sẽ là `FIN_WAIT_1` .
+- Sau khi **Host B** nhận được TCP segment của **Host A** , **Host B** đáp lời cho **Host A** một gói TCP segment với cờ `ACK` được bật lên . Tại thời điểm này **Host A** đi vào trạng thái `FIN_WAIT_2` . 
+- Đến đây xem như **Host A** đã đóng kết nối , tiếp theo đến **Host B** đóng kết nối , tương tự giống như **Host A** , **Host B** gửi 1 TCP segment với cờ `FIN` được thiết lập đến **Host A** . Trạng thái **Host B** lúc này là `LAST_ACK` , trong khi đó **Host A** đi vào trạng thái là `TIME_WAIT` .
+- Cuối cùng **Host A** thừa nhận TCP segment mà **Host B** gửi bằng việc nó gửi lại cho **Host B** một TCP Segment với cờ `ACK` được thiết lập , trạng thái kết nối lúc này là `CLOSED` .
+## **4) Truyền dữ liệu Half-duplex và Full-duplex**
+- Trên một môi trường truyền dẫn ( VD trên 1 sợi cáp đồng ), thông tin lan truyền giữa các thiết bị mạng có thể được thực hiện theo nhiều dạng thức khác nhau như : chỉ cho phép truyền 1 chiều ( quá trình t1 ) từ thiết bị mạng này tới thiết bị mạng khác trong 1 đơn vị thời gian, quá trình t2 chỉ được thực hiện khi quá trình t1 kết thúc. Dạng thức này gọi là **Half-duplex**. Trong trường hợp môi trường truyền và các thiết bị mạng có thể hoạt động song song cùng lúc để quá trình t1 và t2 xảy ra đồng thời ta có dạng thức truyền **Full-duplex** .
+    - **Half-duplex** : giữa 2 đường truyền dữ liệu và luồng tin, chỉ truyền theo 1 hướng tại 1 thời điểm khi 1 thiết bị hoàn thành việc truyền dẫn, nó phải chuyển môi trường truyền đến thiết bị khác . Một thiết bị có thể đóng vai trò THU và PHÁT tín hiệu nhưng tại 1 thời điểm nó chỉ có thể thực hiện 1 vai trò duy nhất.**VD**: Hoạt động của bộ tọa đàm điện thoại, mạng LAN có sử dụng các thiết bị trung tâm là thiết bị Layer 1 thì luôn sử dụng **Half-duplex** .
+    
+        <img src=https://i.imgur.com/sQVEN0y.png>
 
+    - **Full-duplex** : cho phép dữ liệu truyền đồng thời trên cả 2 đường, mỗi thiết kế sẽ có 1 kênh riêng. Mỗi thiết bị có thể đồng thời vừa PHÁT lại vừa THU tín hiệu . Các modem máy tính đều hoạt động theo phương thức này , mạng LAN sử dụng toàn thiết bị tập trung Layer 2 hoặc 2 máy tính kết nối trực tiếp với nhau đều có thể sử dụng .
+
+        <img src=https://i.imgur.com/KLk3KWj.png>
+
+    - Bên cạnh đó, có thể áp dụng dạng truyền **Simple Mode**. Thông tin chỉ truyền theo 1 chiều quy định trước, một thiết bị chỉ đóng vai trò THU hoặc PHÁT cố định. Hệ thống báo cháy dùng phương thức này
+
+
+## **5) Một số cơ chế của TCP**
+### **Cơ chế điều khiển luồng trong TCP ( TCP Flow Control)**
+
+<img src=https://i.imgur.com/m9hceP9.jpg>
+
+- Giả sử : Sender gửi quá nhiều dữ liệu cho Receiver, thì Receiver sẽ chuyển vào bộ đệm để chờ xử lý, đến lúc bộ đệm đầy thì B gửi tín hiệu cho A để không truyền nữa cho đến khi B xử lý hết thì sẽ gửi lại gói tin cho A để tiếp tục nhận dữ liệu.
+### **Fixed Windowing**
+
+<img src=https://i.imgur.com/vAR22pe.jpg>
+
+- Thay vì gửi từng byte rồi đợi **ACK** thì sender sẽ gửi nhiều byte cùng lúc ( **Window Size** bằng bao nhiêu sẽ gửi bấy nhiêu ).
+- Ở cơ chế **Fixed Windowing** thì **Window Size** cố định, nhưng có trường hợp không thể giữ cố định được.
+### **TCP Sliding Windowing ( Window Size có thể thay đổi)**
+
+<img src=https://i.imgur.com/yWgOQAF.jpg>
+
+- **Window Size = 3** nên Sender sẽ gửi lần lượt 3 byte nhưng Receiver chỉ nhận được 2 byte ( do nghẽn mạng, không xử lý nổi ) thì Receiver sẽ **ACK=3** để yêu cầu Sender gửi lại byte thứ 3 đồng thời nó cũng báo hãy sử dụng **Window Size = 2** ( vì nó chỉ chịu nổi size = 2). Sender sau đó sẽ set **Window Size = 2**.
