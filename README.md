@@ -26,7 +26,7 @@
 [5) Inter-VLAN Routing](https://github.com/QuocCuong97/CCNA/blob/master/docs/20_Inter-VLAN_Routing.md)<br>
 [6) Etherchannel](https://github.com/QuocCuong97/CCNA/blob/master/docs/21_Etherchannel.md)<br>
 [7) Port Security](https://github.com/QuocCuong97/CCNA/blob/master/docs/22_Port_Security.md)<br>
-[8) Stackwise và VSS]()
+[8) Stackwise và VSS](https://conglinh.com/3070-huong-dan-cau-hinh-va-quan-ly-stack-switch-cisco.html)
 ### **IV) Các giao thức khác**
 [1) ACLs - Access Control Lists](https://github.com/QuocCuong97/CCNA/blob/master/docs/23_ACL.md)<br>
 [2) NAT - Network Address Translation](https://github.com/QuocCuong97/CCNA/blob/master/docs/24_NAT.md)<br>
